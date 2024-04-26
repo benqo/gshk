@@ -21,9 +21,13 @@ class DataRepository: WorkoutProvider {
     
     func getWorkouts(days: Int, handler: @escaping ((Result<[WorkoutEntity], Error>) -> Void)) {
         Task {
-            if let results = try? await getRecentWorkouts(days: 30) {
-                await MainActor.run {
-                    handler(.success(results.map { $0.workoutEntity }))
+            let result = await getRecentWorkouts(days: 30)
+            await MainActor.run {
+                switch result {
+                case .success(let workouts):
+                    handler(.success(workouts.map { $0.workoutEntity }))
+                case .failure(let error):
+                    handler(.failure(error))
                 }
             }
         }
@@ -37,7 +41,7 @@ class DataRepository: WorkoutProvider {
         }
     }
     
-    private func getRecentWorkouts(days: Int) async throws -> [HKWorkout] {
+    private func getRecentWorkouts(days: Int) async -> Result<[HKWorkout], Error> {
         let end = Date()
         let start = end.advanced(by: -60 * 60 * 24 * Double(days))
 
@@ -50,7 +54,12 @@ class DataRepository: WorkoutProvider {
             limit: nil
         )
         
-        return try await query.result(for: healthStore)
+        do {
+            let results = try await query.result(for: healthStore)
+            return .success(results)
+        } catch {
+            return .failure(error)
+        }
     }
     
 }
