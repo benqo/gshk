@@ -117,14 +117,17 @@ class SummaryPresenter: SummaryPresenting {
         let duration = data.duration / 60
         let hours = Int(duration / 60)
         let minutes = Int(duration - Double(hours * 60))
+        let energyString = decimalFormatter.string(for: data.energy) ?? "0"
+        let distanceString = decimalFormatter.string(for: data.distance / 1000) ?? "0"
+        let elevationString = decimalFormatter.string(for: data.elevation) ?? "0"
         
         return [
             .summary(
                 .init(itemOne: .init(title: "Duration", value: "\(hours) hr \(minutes) min", valueUnits: ["hr", "min"]),
-                      itemTwo: .init(title: "Active energy", value: "\(decimalFormatter.string(for: data.energy) ?? "0") kcal", valueUnits: ["kcal"]))),
+                      itemTwo: .init(title: "Active energy", value: "\(energyString) kcal", valueUnits: ["kcal"]))),
             .summary(
-                .init(itemOne: .init(title: "Distance", value: "\((decimalFormatter.string(for: data.distance / 1000) ?? "0")) km", valueUnits: ["km"]),
-                      itemTwo: .init(title: "Elevation Gain", value: "\(decimalFormatter.string(for: data.elevation) ?? "0") m", valueUnits: ["m"])))
+                .init(itemOne: .init(title: "Distance", value: "\(distanceString) km", valueUnits: ["km"]),
+                      itemTwo: .init(title: "Elevation Gain", value: "\(elevationString) m", valueUnits: ["m"])))
         ]
     }
 }
