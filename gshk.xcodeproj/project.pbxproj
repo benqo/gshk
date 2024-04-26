@@ -68,12 +68,11 @@
 			isa = PBXGroup;
 			children = (
 				43167BD02BDAC31000E137E6 /* gshk.entitlements */,
+				43167BBC2BDAC2F900E137E6 /* AppDelegate.swift */,
+				43167BBE2BDAC2F900E137E6 /* SceneDelegate.swift */,
 				4393AB3A2BDAF46500DAFB77 /* Domain */,
 				4393AB3B2BDAF46E00DAFB77 /* Data */,
 				4393AB352BDAEF6400DAFB77 /* Presentation */,
-				43167BC22BDAC2F900E137E6 /* Main.storyboard */,
-				43167BC52BDAC2FA00E137E6 /* Assets.xcassets */,
-				43167BC72BDAC2FA00E137E6 /* LaunchScreen.storyboard */,
 				43167BCA2BDAC2FA00E137E6 /* Info.plist */,
 			);
 			path = gshk;
@@ -82,8 +81,9 @@
 		4393AB352BDAEF6400DAFB77 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				43167BBC2BDAC2F900E137E6 /* AppDelegate.swift */,
-				43167BBE2BDAC2F900E137E6 /* SceneDelegate.swift */,
+				43167BC22BDAC2F900E137E6 /* Main.storyboard */,
+				43167BC52BDAC2FA00E137E6 /* Assets.xcassets */,
+				43167BC72BDAC2FA00E137E6 /* LaunchScreen.storyboard */,
 				43167BC02BDAC2F900E137E6 /* SummaryViewController.swift */,
 				4393AB332BDAEF0700DAFB77 /* SummaryPresenter.swift */,
 				4393AB3C2BDAF56600DAFB77 /* SummarySubviews.swift */,
