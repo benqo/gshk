@@ -67,6 +67,7 @@ class SummaryPresenter: SummaryPresenting {
         dateFormatter.timeStyle = .none
         decimalFormatter.minimumFractionDigits = 0
         decimalFormatter.maximumFractionDigits = 2
+        decimalFormatter.numberStyle = .decimal
     }
     
     func loadData() {
