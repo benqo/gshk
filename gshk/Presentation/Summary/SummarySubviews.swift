@@ -74,7 +74,7 @@ class RoundedView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        layer.cornerRadius = 20
+        layer.cornerRadius = 26
     }
 }
 
