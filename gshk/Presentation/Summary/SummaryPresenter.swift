@@ -129,7 +129,7 @@ class SummaryPresenter: SummaryPresenting {
         return [
             .summary(
                 .init(itemOne: .init(title: "Duration", value: "\(hours) hr \(minutes) min", valueUnits: ["hr", "min"]),
-                      itemTwo: .init(title: "Active rnergy", value: "\(energyString) kcal", valueUnits: ["kcal"]))),
+                      itemTwo: .init(title: "Active Energy", value: "\(energyString) kcal", valueUnits: ["kcal"]))),
             .summary(
                 .init(itemOne: .init(title: "Distance", value: "\(distanceString) km", valueUnits: ["km"]),
                       itemTwo: .init(title: "Elevation Gain", value: "\(elevationString) m", valueUnits: ["m"])))
