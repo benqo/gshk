@@ -55,10 +55,6 @@ extension SummaryViewController: UITableViewDelegate, UITableViewDataSource {
         return 42
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.01
-    }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SummarySectionHeaderView.identifier) as? SummarySectionHeaderView
         let section = presenter.viewModel.sections[section]
