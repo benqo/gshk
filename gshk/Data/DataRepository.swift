@@ -61,7 +61,6 @@ class DataRepository: WorkoutProvider {
             return .failure(error)
         }
     }
-    
 }
 
 typealias WorkoutType = HKWorkoutActivityType
