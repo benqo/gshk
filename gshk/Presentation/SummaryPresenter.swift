@@ -17,6 +17,10 @@ protocol SummaryDisplaying {
 }
 
 class SummaryPresenter: SummaryPresenting {
+    struct Constants {
+        static let summaryDays: Int = 30
+    }
+    
     struct DisplayedWorkout {
         let title: String
         let subtitle: String
@@ -74,7 +78,7 @@ class SummaryPresenter: SummaryPresenting {
         
         let workouts = data.workouts.map { getWorkoutRow(for: $0) }
         viewModel = .init(sections: [
-            .init(title: "RUNNING \(30) days", rows: getSummaryRows(for: data)),
+            .init(title: "RUNNING \(Constants.summaryDays) days", rows: getSummaryRows(for: data)),
             .init(title: "\(data.workouts.count) ACTIVITIES", rows: workouts)
         ])
         displayer.display(viewModel: viewModel)
@@ -86,7 +90,7 @@ class SummaryPresenter: SummaryPresenting {
         } else if let error = error {
             displayer.display(error: error.localizedDescription)
         } else {
-            workoutUseCase.getSummary(days: 30) { [weak self] result in self?.handleSummary(result) }
+            workoutUseCase.getSummary(days: Constants.summaryDays) { [weak self] result in self?.handleSummary(result) }
         }
     }
     
