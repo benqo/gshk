@@ -199,18 +199,24 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="C4R-yi-4ir"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="diG-Uu-bsZ">
+                                <rect key="frame" x="178" y="442" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vbf-E7-ZO0" secondAttribute="trailing" id="0kI-sf-DaI"/>
+                            <constraint firstItem="diG-Uu-bsZ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="2lA-zW-wpp"/>
                             <constraint firstItem="Vbf-E7-ZO0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NOD-Qb-FGT"/>
                             <constraint firstItem="Vbf-E7-ZO0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fWS-rE-rZm"/>
+                            <constraint firstItem="diG-Uu-bsZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lJF-Pb-ReG"/>
                             <constraint firstAttribute="bottom" secondItem="Vbf-E7-ZO0" secondAttribute="bottom" id="mx1-ua-Ret"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I0T-Qx-8hI"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="diG-Uu-bsZ" id="Ebk-2a-Mva"/>
                         <outlet property="tableView" destination="Vbf-E7-ZO0" id="WaI-K7-6IC"/>
                     </connections>
                 </viewController>

@@ -122,7 +122,7 @@ class SummaryPresenter: SummaryPresenting {
         let duration = data.duration / 60
         let hours = Int(duration / 60)
         let minutes = Int(duration - Double(hours * 60))
-        let energyString = decimalFormatter.string(for: data.energy) ?? "0"
+        let energyString = decimalFormatter.string(for: Int(data.energy)) ?? "0"
         let distanceString = decimalFormatter.string(for: data.distance / 1000) ?? "0"
         let elevationString = decimalFormatter.string(for: data.elevation) ?? "0"
         

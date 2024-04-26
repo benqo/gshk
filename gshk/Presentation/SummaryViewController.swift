@@ -10,6 +10,7 @@ import UIKit
 class SummaryViewController: UIViewController, SummaryDisplaying {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private lazy var presenter = SummaryPresenter(displayer: self)
     
@@ -18,21 +19,18 @@ class SummaryViewController: UIViewController, SummaryDisplaying {
         
         presenter.workoutUseCase = .init(repository: DataRepository())
         title = "Summary"
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         presenter.loadData()
     }
     
     func display(viewModel: SummaryPresenter.ViewModel) {
         tableView.reloadData()
+        activityIndicator.stopAnimating()
     }
     
     func display(error: String) {
         let controller = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
         present(controller, animated: true)
+        activityIndicator.stopAnimating()
     }
 }
 
