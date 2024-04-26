@@ -72,9 +72,9 @@
 				43167BD02BDAC31000E137E6 /* gshk.entitlements */,
 				43167BBC2BDAC2F900E137E6 /* AppDelegate.swift */,
 				43167BBE2BDAC2F900E137E6 /* SceneDelegate.swift */,
+				4393AB352BDAEF6400DAFB77 /* Presentation */,
 				4393AB3A2BDAF46500DAFB77 /* Domain */,
 				4393AB3B2BDAF46E00DAFB77 /* Data */,
-				4393AB352BDAEF6400DAFB77 /* Presentation */,
 				43167BCA2BDAC2FA00E137E6 /* Info.plist */,
 			);
 			path = gshk;
