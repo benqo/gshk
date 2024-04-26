@@ -21,7 +21,7 @@ class DataRepository: WorkoutProvider {
     
     func getWorkouts(days: Int, handler: @escaping ((Result<[WorkoutEntity], Error>) -> Void)) {
         Task {
-            let result = await getRecentWorkouts(days: 30)
+            let result = await getRecentWorkouts(days: days)
             await MainActor.run {
                 switch result {
                 case .success(let workouts):
