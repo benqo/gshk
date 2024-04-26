@@ -79,7 +79,7 @@ class SummaryPresenter: SummaryPresenting {
         
         let workouts = data.workouts.map { getWorkoutRow(for: $0) }
         viewModel = .init(sections: [
-            .init(title: "RUNNING \(Constants.summaryDays) days", rows: getSummaryRows(for: data)),
+            .init(title: "LAST \(Constants.summaryDays) DAYS", rows: getSummaryRows(for: data)),
             .init(title: "\(data.workouts.count) ACTIVITIES", rows: workouts)
         ])
         displayer.display(viewModel: viewModel)

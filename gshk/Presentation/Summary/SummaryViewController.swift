@@ -18,6 +18,13 @@ class SummaryViewController: UIViewController, SummaryDisplaying {
         super.viewDidLoad()
         
         presenter.workoutUseCase = .init(repository: DataRepository())
+        
+        navigationController?.navigationBar.largeTitleTextAttributes = [.font: UIFont.systemFont(ofSize: 34, weight: .bold).rounded]
+        navigationController?.navigationBar.titleTextAttributes = [.font: UIFont.systemFont(ofSize: 20, weight: .bold).rounded]
+        
+        tableView.register(UINib(nibName: SummarySectionHeaderView.identifier, bundle: nil),
+                           forHeaderFooterViewReuseIdentifier: SummarySectionHeaderView.identifier)
+        
         title = "Summary"
         presenter.loadData()
     }
@@ -44,8 +51,19 @@ extension SummaryViewController: UITableViewDelegate, UITableViewDataSource {
         return section.rows.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return presenter.viewModel.sections[section].title
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 42
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SummarySectionHeaderView.identifier) as? SummarySectionHeaderView
+        let section = presenter.viewModel.sections[section]
+        view?.populate(title: section.title)
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

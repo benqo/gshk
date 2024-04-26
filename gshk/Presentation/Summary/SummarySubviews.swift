@@ -78,6 +78,23 @@ class RoundedView: UIView {
     }
 }
 
+class SummarySectionHeaderView: UITableViewHeaderFooterView {
+    static let identifier = "SummarySectionHeaderView"
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        backgroundView = .init()
+        backgroundView?.backgroundColor = .clear
+    }
+    
+    func populate(title: String) {
+        titleLabel.text = title
+    }
+}
+
 public extension UIFont {
     var rounded: UIFont {
         guard let desc = self.fontDescriptor.withDesign(.rounded)
