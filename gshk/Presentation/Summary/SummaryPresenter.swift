@@ -63,8 +63,7 @@ class SummaryPresenter: SummaryPresenting {
     init(displayer: SummaryDisplayer) {
         self.displayer = displayer
         
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
+        dateFormatter.dateFormat = "EEEE dd MMMM"
         decimalFormatter.minimumFractionDigits = 0
         decimalFormatter.maximumFractionDigits = 2
         decimalFormatter.numberStyle = .decimal
