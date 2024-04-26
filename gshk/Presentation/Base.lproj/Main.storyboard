@@ -136,27 +136,27 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIa-a7-MUc" customClass="RoundedView" customModule="gshk" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="5" width="353" height="80"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="T2O-O5-l3g">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="T2O-O5-l3g">
                                                             <rect key="frame" x="18" y="18" width="317" height="44"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennis" translatesAutoresizingMaskIntoConstraints="NO" id="Woa-Wq-Vk2">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="44"/>
                                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="44" id="zpe-D0-CwR"/>
+                                                                        <constraint firstAttribute="width" constant="30" id="zpe-D0-CwR"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ooj-Vt-EYZ">
-                                                                    <rect key="frame" x="58" y="0.0" width="259" height="44"/>
+                                                                    <rect key="frame" x="50" y="0.0" width="267" height="44"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an4-Pg-abS">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="259" height="28.333333333333332"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="267" height="28.333333333333332"/>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSP-V4-ZGC">
-                                                                            <rect key="frame" x="0.0" y="28.333333333333339" width="259" height="15.666666666666668"/>
+                                                                            <rect key="frame" x="0.0" y="28.333333333333339" width="267" height="15.666666666666668"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                             <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
