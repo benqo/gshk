@@ -19,11 +19,11 @@ class DataRepository: WorkoutProvider {
         }
     }
     
-    func getWorkouts(days: Int, handler: @escaping (([WorkoutEntity]) -> Void)) {
+    func getWorkouts(days: Int, handler: @escaping ((Result<[WorkoutEntity], Error>) -> Void)) {
         Task {
             if let results = try? await getRecentWorkouts(days: 30) {
                 await MainActor.run {
-                    handler(results.map { $0.workoutEntity })                    
+                    handler(.success(results.map { $0.workoutEntity }))
                 }
             }
         }
@@ -37,7 +37,7 @@ class DataRepository: WorkoutProvider {
         }
     }
     
-    func getRecentWorkouts(days: Int) async throws -> [HKWorkout] {
+    private func getRecentWorkouts(days: Int) async throws -> [HKWorkout] {
         let end = Date()
         let start = end.advanced(by: -60 * 60 * 24 * Double(days))
 

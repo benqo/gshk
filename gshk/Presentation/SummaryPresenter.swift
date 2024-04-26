@@ -86,10 +86,17 @@ class SummaryPresenter: SummaryPresenting {
         } else if let error = error {
             displayer.display(error: error.localizedDescription)
         } else {
-            workoutUseCase.getSummary(days: 30) { [weak self] summary in
-                self?.data = summary
-                self?.updateViewModelAndDisplay()
-            }
+            workoutUseCase.getSummary(days: 30) { [weak self] result in self?.handleSummary(result) }
+        }
+    }
+    
+    private func handleSummary(_ result: Result<WorkoutSummaryEntity, Error>) {
+        switch result {
+        case .success(let summary):
+            data = summary
+            updateViewModelAndDisplay()
+        case .failure(let error):
+            displayer.display(error: error.localizedDescription)
         }
     }
     
